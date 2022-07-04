@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { UserRepositoryService } from '../core/user-repository.service';
 import { CatalogRepositoryService } from './catalog-repository.service';
 import { IClass } from './class.model';
@@ -8,7 +8,8 @@ import { FilterClassesService } from './filter-classes.service';
 
 @Component({
   styleUrls: ['./catalog.component.css'],
-  templateUrl: './catalog.component.html'
+  templateUrl: './catalog.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CatalogComponent implements OnInit {
   classes:IClass[] = [];
